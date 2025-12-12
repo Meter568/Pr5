@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function toggleModalAuth() {
         modalAuth.classList.toggle('is-open');
+        enableScroll();
     }
 
     modalAuth.addEventListener('click', function (event) {

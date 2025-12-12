@@ -6,13 +6,43 @@ document.addEventListener('DOMContentLoaded', function () {
     const logInForm = document.querySelector('#loginForm');
     const userName = document.querySelector('.user-name');
 
+    window.disableScroll = function () {
+        document.body.dbScrollY = window.scrollY;
+
+        document.body.style.cssText=`
+            position: fixed;
+            top: ${-window.scrollY}px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            height: 100vh;
+        `;
+    }
+
+    window.enableScroll = function () {
+        document.body.style.cssText = '';
+        window.scroll({top: document.body.dbScrollY});
+    }
+
     btnOpenAuth.addEventListener('click', function () {
-        modalAuth.style.display = 'block';
+        modalAuth.classList.add('is-open');
+        disableScroll();
     })
 
     btnCloseAuth.addEventListener('click', function () {
-        modalAuth.style.display = 'none';
+        modalAuth.classList.remove('is-open');
+        enableScroll();
     })
+
+    function toggleModalAuth() {
+        modalAuth.classList.toggle('is-open');
+    }
+
+    modalAuth.addEventListener('click', function (event) {
+        if (event.target === modalAuth) {
+            toggleModalAuth();
+        }
+    });
 
     logInForm.addEventListener('click', function () {
         event.preventDefault();
@@ -73,5 +103,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     checkAuth();
-
 })

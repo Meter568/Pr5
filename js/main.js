@@ -1,3 +1,5 @@
+import { restaurantsData, goodsData } from './data.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const modalAuth = document.querySelector('.modal-auth');
     const btnOpenAuth = document.querySelector('#openAuth');
@@ -5,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnCloseAuth = document.querySelector('#closeAuth');
     const logInForm = document.querySelector('#loginForm');
     const userName = document.querySelector('.user-name');
+
+    const cardsRestaurants = document.querySelector('.cards-restaurants');
 
     window.disableScroll = function () {
         document.body.dbScrollY = window.scrollY;
@@ -104,4 +108,52 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     checkAuth();
+
+    function createCardRestaurant(restaurant) {
+        const card = document.createElement('a');
+        card.href = '#';
+        card.className = 'card card-restaurant';
+
+        card.insertAdjacentHTML('beforeend', `
+            <img src="${restaurant.image}" alt="image" class="card-image" />
+            <div class="card-text">
+                <div class="card-heading">
+                    <h3 class="card-title">${restaurant.title}</h3>
+                    <span class="card-tag tag">${restaurant.tag}</span>
+                </div>
+                <div class="card-info">
+                    <div class="rating">
+                        ${restaurant.rating}
+                    </div>
+                    <div class="price">${restaurant.price}</div>
+                    <div class="category">${restaurant.category}</div>
+                </div>
+            </div>
+        `);
+
+        cardsRestaurants.insertAdjacentElement('beforeend', card);
+    }
+
+    function renderRestaurants(){
+        cardsRestaurants.innerHTML = '';
+        restaurantsData.forEach(createCardRestaurant);
+    }
+
+    renderRestaurants();
+
+    cardsRestaurants.addEventListener('click', function (event) {
+        const card = event.target.closest('.card-restaurant');
+        if(!card) return;
+
+        event.preventDefault();
+
+        const isLoggedIn = localStorage.getItem('user');
+
+        if(!isLoggedIn){
+            toggleModalAuth();
+            return;
+        }
+
+        window.location.href = 'restaurant.html';
+    })
 })

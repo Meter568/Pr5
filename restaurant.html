@@ -20,9 +20,14 @@
 				<input type="text" class="input input-address" placeholder="Адреса доставки" />
 			</label>
 			<div class="buttons">
-				<button class="button button-primary button-auth">
+				<span class="user-name"></span>
+				<button class="button button-primary button-auth" id="openAuth">
 					<span class="button-auth-svg"></span>
 					<span class="button-text">Війти</span>
+				</button>
+				<button class="button button-primary button-out" id="logout">
+					<span class="button-text">Вийти</span>
+					<span class="button-out-svg"></span>
 				</button>
 				<button class="button" id="cart-button">
 					<span class="button-cart-svg"></span>
@@ -45,22 +50,19 @@
 						<div class="price">От 300 ₴</div>
 						<div class="category">Піца</div>
 					</div>
-					<!-- /.card-info -->
 				</div>
 				<div class="cards cards-menu">
-					<div class="card">
+					<!-- <div class="card">
 						<img src="img/pizza-plus/pizza-vesuvius.jpg" alt="image" class="card-image" />
 						<div class="card-text">
 							<div class="card-heading">
 								<h3 class="card-title card-title-reg">Піца Везувій</h3>
 							</div>
-							<!-- /.card-heading -->
 							<div class="card-info">
 								<div class="ingredients">Соус томатний, сир «Моцарелла», шинка, пепероні, перець
 									«Халапіння», соус «Тобаско», томати.
 								</div>
 							</div>
-							<!-- /.card-info -->
 							<div class="card-buttons">
 								<button class="button button-primary button-add-cart">
 									<span class="button-card-text">У кошик</span>
@@ -69,9 +71,7 @@
 								<strong class="card-price-bold">545 ₴</strong>
 							</div>
 						</div>
-						<!-- /.card-text -->
 					</div>
-					<!-- /.card -->
 
 					<div class="card">
 						<img src="img/pizza-plus/pizza-girls.jpg" alt="image" class="card-image" />
@@ -79,14 +79,12 @@
 							<div class="card-heading">
 								<h3 class="card-title card-title-reg">Піца BBQ</h3>
 							</div>
-							<!-- /.card-heading -->
 							<div class="card-info">
 								<div class="ingredients">Соус томатний, пісне тісто, нежирний сир, кукурудза, цибуля,
 									маслини,
 									гриби, помідори, болгарський перець
 								</div>
 							</div>
-							<!-- /.card-info -->
 							<div class="card-buttons">
 								<button class="button button-primary button-add-cart">
 									<span class="button-card-text">У кошик</span>
@@ -95,9 +93,7 @@
 								<strong class="card-price-bold">150 ₴</strong>
 							</div>
 						</div>
-						<!-- /.card-text -->
 					</div>
-					<!-- /.card -->
 
 					<div class="card">
 						<img src="img/pizza-plus/pizza-oleole.jpg" alt="image" class="card-image" />
@@ -105,12 +101,10 @@
 							<div class="card-heading">
 								<h3 class="card-title card-title-reg">Піца Оле-Оле</h3>
 							</div>
-							<!-- /.card-heading -->
 							<div class="card-info">
 								<div class="ingredients">Соус томатний, сир «Моцарелла», черрі, маслини, зелень, майонез
 								</div>
 							</div>
-							<!-- /.card-info -->
 							<div class="card-buttons">
 								<button class="button button-primary button-add-cart">
 									<span class="button-card-text">У кошик</span>
@@ -119,9 +113,7 @@
 								<strong class="card-price-bold">440 ₴</strong>
 							</div>
 						</div>
-						<!-- /.card-text -->
 					</div>
-					<!-- /.card -->
 
 					<div class="card">
 						<img src="img/pizza-plus/pizza-plus.jpg" alt="image" class="card-image" />
@@ -129,14 +121,12 @@
 							<div class="card-heading">
 								<h3 class="card-title card-title-reg">Піца Плюс</h3>
 							</div>
-							<!-- /.card-heading -->
 							<div class="card-info">
 								<div class="ingredients">Соус томатний, сир «Моцарелла», сир «Чеддер», томат,
 									пепероні,
 									телятина, гриби, бекон, болгарський перець.
 								</div>
 							</div>
-							<!-- /.card-info -->
 							<div class="card-buttons">
 								<button class="button button-primary button-add-cart">
 									<span class="button-card-text">У кошик</span>
@@ -145,9 +135,7 @@
 								<strong class="card-price-bold">405 ₴</strong>
 							</div>
 						</div>
-						<!-- /.card-text -->
 					</div>
-					<!-- /.card -->
 
 					<div class="card">
 						<img src="img/pizza-plus/pizza-hawaiian.jpg" alt="image" class="card-image" />
@@ -155,11 +143,9 @@
 							<div class="card-heading">
 								<h3 class="card-title card-title-reg">Піца Гавайська</h3>
 							</div>
-							<!-- /.card-heading -->
 							<div class="card-info">
 								<div class="ingredients">Соус томатний, сир «Моцарелла», шинка, ананаси</div>
 							</div>
-							<!-- /.card-info -->
 							<div class="card-buttons">
 								<button class="button button-primary button-add-cart">
 									<span class="button-card-text">У кошик</span>
@@ -168,9 +154,7 @@
 								<strong class="card-price-bold">340 ₴</strong>
 							</div>
 						</div>
-						<!-- /.card-text -->
 					</div>
-					<!-- /.card -->
 
 					<div class="card">
 						<img src="img/pizza-plus/pizza-classic.jpg" alt="image" class="card-image" />
@@ -178,14 +162,12 @@
 							<div class="card-heading">
 								<h3 class="card-title card-title-reg">Піца Класика</h3>
 							</div>
-							<!-- /.card-heading -->
 							<div class="card-info">
 								<div class="ingredients">Соус томатний, сир «Моцарелла», сир «Пармезан», шинка,
 									салямі,
 									гриби.
 								</div>
 							</div>
-							<!-- /.card-info -->
 							<div class="card-buttons">
 								<button class="button button-primary button-add-cart">
 									<span class="button-card-text">У кошик</span>
@@ -194,9 +176,7 @@
 								<strong class="card-price-bold">310 ₴</strong>
 							</div>
 						</div>
-						<!-- /.card-text -->
-					</div>
-					<!-- /.card -->
+					</div> -->
 				</div>
 				<!-- /.cards -->
 			</section>
@@ -288,7 +268,7 @@
 
 	<div class="modal-auth">
 		<div class="modal-dialog modal-dialog-auth">
-			<button class="close-auth">&times;</button>
+			<button class="close-auth" id="closeAuth">&times;</button>
 			<form id="logInForm">
 				<fieldset class="modal-body">
 					<legend class="modal-title">Авторизація</legend>
@@ -313,5 +293,6 @@
 		<!-- /.modal-dialog -->
 	</div>
 </body>
+<script src="js/restaurant.js" type="module"></script>
 
 </html>

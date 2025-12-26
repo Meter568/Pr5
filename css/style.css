@@ -162,7 +162,6 @@ button {
 }
 
 .promo-slider {
-
     width: 600px;
     height: 300px;
 
@@ -571,6 +570,10 @@ button {
     padding: 15px 20px;
     font-size: 20px;
     line-height: 23px;
+}
+
+.swiper{
+    height: 450px;
 }
 
 @media (max-width: 1366px) {
